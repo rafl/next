@@ -49,3 +49,7 @@ Revision history for Perl extension NEXT.pm.
 
 	- Replaced UNSEEN with DISTINCT (but left UNSEEN operational
 	  for backwards compatibility)
+
+
+0.52	Wed Jul 30 21:06:59 2003
+
