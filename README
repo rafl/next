@@ -1,5 +1,5 @@
 ==============================================================================
-                       Release of version 0.50 of NEXT
+                       Release of version 0.51 of NEXT
 ==============================================================================
 
 
@@ -50,22 +50,17 @@ COPYRIGHT
 
 ==============================================================================
 
-CHANGES IN VERSION 0.50
+CHANGES IN VERSION 0.51
 
 
-	- Added a $VERSION (oops!)
+	- Fixed NEXT::UNSEEN bug under diamond inheritance (thanks Dan
+	  and Alan)
 
-	- Fixed handling of diamond patterns (thanks Paul)
+	- Moved &ancestors out of NEXT class in case anyone ever 
+	  calls NEXT::ancestors
 
-	- Added NEXT::ACTUAL to require existence of next method (thanks Paul)
-
-	- Added NEXT::UNSEEN to avoid calling multiply inherited
-	  methods twice (thanks Paul)
-
-	- Re-fixed setting of $AUTOLOAD in NEXT'd AUTOLOADS to be
-	  consistent with more useful SUPER:: behaviour
-
-	- Corified tests
+	- Replaced UNSEEN with DISTINCT (but left UNSEEN operational
+	  for backwards compatibility)
 
 
 ==============================================================================
@@ -73,8 +68,5 @@ CHANGES IN VERSION 0.50
 AVAILABILITY
 
 NEXT has been uploaded to the CPAN
-and is also available from:
-
-	http://www.csse.monash.edu.au/~damian/CPAN/NEXT.tar.gz
 
 ==============================================================================

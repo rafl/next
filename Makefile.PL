@@ -1,7 +1,7 @@
 
 use ExtUtils::MakeMaker;
 WriteMakefile(
-		NAME	=> 'NEXT',
-		VERSION => '0.50',
+		NAME	=> q[NEXT],
+		VERSION => q[0.51],
 
 	     );
