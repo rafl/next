@@ -2,6 +2,13 @@ Changes
 MANIFEST
 Makefile.PL
 README
-demo.pl
 lib/NEXT.pm
-test.pl
+t/actual.t
+t/actuns.t
+t/next.t
+t/unseen.t
+demo/demo.pl
+demo/demo_actual.pl
+demo/demo_diamond.pl
+demo/demo_unseen.pl
+demo/demo_unseen_actual.pl
