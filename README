@@ -1,5 +1,5 @@
 ==============================================================================
-                       Release of version 0.01 of NEXT
+                       Release of version 0.02 of NEXT
 ==============================================================================
 
 
@@ -19,6 +19,12 @@ DESCRIPTION
     depth-first, left-to-right search of parent classes that
     resulted in the original call to C<m>.
 
+    Note that this is not the same thing as C<$self->SUPER::m()>, which
+    begins a new dispatch that is restricted to searching the ancestors
+    of the current class. C<$self->NEXT::m()> can backtrack past
+    the current class -- to look for a suitable method in other
+    ancestors of C<$self> -- whereas C<$self->SUPER::m()> cannot.
+
     An particularly interesting use of redispatch is in
     C<AUTOLOAD>'ed methods. If such a method determines that it is
     not able to handle a particular call, it may choose to
@@ -28,7 +34,7 @@ DESCRIPTION
     Note that it is a fatal error for any method (including C<AUTOLOAD>)
     to attempt to redispatch any method except itself. For example:
 
-            sub D::oops { $_[0]->NEXT::other_method() }	# BANG!
+            sub D::oops { $_[0]->NEXT::other_method() } # BANG!
 
 
 AUTHOR
@@ -38,17 +44,20 @@ AUTHOR
 
 COPYRIGHT
 
-         Copyright (c) 2000, Damian Conway. All Rights Reserved.
-         This module is free software. It may be used, redistributed
-        and/or modified under the terms of the Perl Artistic License
-             (see http://www.perl.com/perl/misc/Artistic.html)
+	 Copyright (c) 2000-2001, Damian Conway. All Rights Reserved.
+	 This module is free software. It may be used, redistributed
+	    and/or modified under the same terms as Perl itself.
 
 
 ==============================================================================
 
-CHANGES IN VERSION 0.01
+CHANGES IN VERSION 0.02
 
-(No changes have been documented for this version)
+
+	- Fixed setting of $AUTOLOAD in NEXT'd AUTOLOADS (thanks Leonid)
+
+	- Changed licence for inclusion in core distribution
+
 
 ==============================================================================
 

@@ -2,6 +2,6 @@
 use ExtUtils::MakeMaker;
 WriteMakefile(
 		NAME	=> 'NEXT',
-		VERSION => '0.01',
+		VERSION => '0.02',
 
 	     );
