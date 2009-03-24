@@ -67,3 +67,15 @@ Revision history for Perl extension NEXT.pm.
 	  (Note to self: don't code whilst on vacation!)
 
 	- Implemented and documented EVERY functionality
+
+0.61    Tue Mar 24 02:50:26 2009
+
+    - Pod tweaks (Alan Ferrency).
+
+    - Fix a bug when using NEXT from within an eval block (Dave Rolsky).
+
+    - Fix some pod typos (Piotr Fusik).
+
+    - Fix a bug when using NEXT within overloaded stringification (Marcel Grünauer).
+
+    - Make NEXT work with AUTOLOAD (Damian Conway).
