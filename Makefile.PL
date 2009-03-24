@@ -1,7 +1,6 @@
 
 use ExtUtils::MakeMaker;
 WriteMakefile(
-		NAME	=> q[NEXT],
-		VERSION => q[0.60],
-
-	     );
+    NAME         => q[NEXT],
+    VERSION_FROM => q[lib/NEXT.pm],
+);
