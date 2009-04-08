@@ -1,5 +1,9 @@
 Revision history for Perl extension NEXT.pm.
 
+0.62    Wed Apr  8 03:27:25 2009
+    - Be less aggressive when looking at the symbol table to find
+      methods. This prevents "used only once" warnings on 5.10.
+
 0.61    Tue Mar 24 02:50:26 2009
     - Pod tweaks (Alan Ferrency).
     - Fix a bug when using NEXT from within an eval block (Dave Rolsky).
