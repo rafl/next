@@ -62,10 +62,18 @@ sub NEXT::ELSEWHERE::buildAUTOLOAD
             }
             no strict 'refs';
             @{$NEXT::NEXT{$key,$wanted_method}} =
-                map { *{"${_}::$caller_method"}{CODE}||() } @forebears
+                map {
+                    my $stash = \%{"${_}::"};
+                    ($stash->{$caller_method} && (*{$stash->{$caller_method}}{CODE}))
+                        ? *{$stash->{$caller_method}}{CODE}
+                        : () } @forebears
                     unless $wanted_method eq 'AUTOLOAD';
             @{$NEXT::NEXT{$key,$wanted_method}} =
-                map { (*{"${_}::AUTOLOAD"}{CODE}) ? "${_}::AUTOLOAD" : ()} @forebears
+                map {
+                    my $stash = \%{"${_}::"};
+                    ($stash->{AUTOLOAD} && (*{$stash->{AUTOLOAD}}{CODE}))
+                        ? "${_}::AUTOLOAD"
+                        : () } @forebears
                     unless @{$NEXT::NEXT{$key,$wanted_method}||[]};
             $NEXT::SEEN->{$key,*{$caller}{CODE}}++;
         }
