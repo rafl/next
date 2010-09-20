@@ -1,5 +1,8 @@
 Revision history for Perl extension NEXT.pm.
 
+0.65    Mon Sep 20 03:32:46 2010
+    - Remove unnecessary test boilerplate that caused trouble in the perl core.
+
 0.64    Mon Jun  8 14:36:00 2009
     - Fixed overwriting dynamically scoped regex vars (Norbert Buchmuller,
       Closes RT#36956).
